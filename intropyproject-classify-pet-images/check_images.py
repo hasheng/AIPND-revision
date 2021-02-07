@@ -3,9 +3,9 @@
 # */AIPND-revision/intropyproject-classify-pet-images/check_images.py
 #
 # TODO 0: Add your information below for Programmer & Date Created.                                                                             
-# PROGRAMMER: 
-# DATE CREATED:                                  
-# REVISED DATE: 
+# PROGRAMMER: Hashim Javed
+# DATE CREATED: February 5, 2021                                 
+# REVISED DATE: February 5, 2021
 # PURPOSE: Classifies pet images using a pretrained CNN model, compares these
 #          classifications to the true identity of the pets in the images, and
 #          summarizes how well the CNN performed on the image classification task. 
@@ -40,8 +40,21 @@ from print_results import print_results
 # Main program function defined below
 def main():
     # TODO 0: Measures total program runtime by collecting start time
+    
+    # Sets start time
     start_time = time()
     
+    # Replace sleep (75) below with code you to time
+    sleep(120)
+
+    #set end time
+    end_time = time()
+
+    # Compute overall runtime in seconds
+    tot_time = end_time - start_time
+
+    print("\nTotal Elapsed Runtime:", tot_time, "in seconds.")
+
     # TODO 1: Define get_input_args function within the file get_input_args.py
     # This function retrieves 3 Command Line Arugments from user as input from
     # the user running the program from a terminal window. This function returns
