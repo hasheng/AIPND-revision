@@ -3,8 +3,8 @@
 # */AIPND-revision/intropyproject-classify-pet-images/classify_images.py
 #                                                                             
 # PROGRAMMER: Hashim Javed
-# DATE CREATED: February 6, 2021                                
-# REVISED DATE: February 6, 2021
+# DATE CREATED: February 11, 2021                                
+# REVISED DATE: February 11, 2021
 # PURPOSE: Create a function classify_images that uses the classifier function 
 #          to create the classifier labels and then compares the classifier 
 #          labels to the pet image labels. This function inputs:
@@ -12,7 +12,7 @@
 #             and as in_arg.dir for function call within main. 
 #            -The results dictionary as results_dic within classify_images 
 #             function and results for the functin call within main.
-#            -The CNN model architecture as model within classify_images function
+#            -The CNN model architecture as model wihtin classify_images function
 #             and in_arg.arch for the function call within main. 
 #           This function uses the extend function to add items to the list 
 #           that's the 'value' of the results dictionary. You will be adding the
@@ -22,6 +22,7 @@
 ##
 # Imports classifier function for using CNN to classify images 
 from classifier import classifier 
+from os import listdir
 
 # TODO 3: Define classify_images function below, specifically replace the None
 #       below by the function definition of the classify_images function. 
@@ -29,6 +30,7 @@ from classifier import classifier
 #       results_dic dictionary that is passed into the function is a mutable 
 #       data type so no return is needed.
 # 
+
 def classify_images(images_dir, results_dic, model):
     """
     Creates classifier labels with classifier function, compares pet labels to 
@@ -65,4 +67,36 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.         
     """
-    None 
+#     List of files in this directory
+    in_files = listdir(images_dir)
+
+    
+    model_label =""
+    
+    """
+    filenames = results_dic[key]
+    pet_labels = results_dic[value]
+    model_label = classifier(images_dir+i, model)
+    label_is_a_dog = if model_label - results_dic value
+    model_lable_is_a_dog
+    """
+    
+#     for key in results_dic:
+    for key in results_dic:
+        model_label = classifier(images_dir+key, model).lower().strip()
+        
+        if results_dic[key][0] in model_label:
+            
+            
+            
+            results_dic[key].extend([model_label, 1])
+                    
+        else:
+            model_label="not a match"
+            
+            
+            results_dic[key].extend([model_label, 0]) 
+
+    
+    print(results_dic)
+    
